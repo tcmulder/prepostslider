@@ -1,0 +1,95 @@
+html, body {
+  height: 100%;
+}
+.prepostslider {
+  height: 100%;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: scroll; //fallback
+  background: #1a4559;
+  @media (max-height: 450px) {
+    height: 80%;
+  }
+  & > ul {
+    position: relative;
+    height: 100%;
+    margin: 0;
+    padding-left: 0;
+    white-space: nowrap;
+    transition: transform 1000ms;
+    font-size: 0; //inline-block spacing fix
+    z-index: 10;
+    & > li {
+      vertical-align: middle;
+      position: relative;
+      display: inline-block;
+      height: 100%;
+      list-style: none;
+      max-width: 90%;
+      background-size: cover;
+      background-position: center;
+      backface-visibility: hidden;
+      transition: opacity 2000ms;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      @media (max-height: 450px) {
+        max-width: 80%;
+      }
+      &.inactive-slide {
+        opacity: .5;
+        transition: opacity 1000ms;
+      }
+    }
+  }
+  img {
+    height: 100%;
+  }
+}
+.prepost-pre,
+.prepost-post {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  font-size: 1em;
+  margin-top: -.5em;
+  background-color: rgba(#000,.5);
+  padding: 1em;
+  text-decoration: none;
+  z-index: 20;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  @media screen and (max-width: 500px) {
+    font-size: .8em;
+    padding: 1em .2em;
+  }
+}
+.prepost-pre {
+  left: 0;
+  border-radius: 0 2em 2em 0;
+}
+.prepost-post {
+  right: 0;
+  border-radius: 2em 0 0 2em;
+}
+
+
+
+////////////////////
+//// TEMPORARY ////
+//////////////////
+/////////////////
+////////////////
+///////////////
+
+//i'm using this to mimic different screen sizes while testing
+.temp-viewport {
+  height: 200px; width: 300px; margin:0 auto;
+  height: 100%; width: 100%;
+ /* li:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 0 0 1px rgba(teal,.1) inset;
+  }*/
+}

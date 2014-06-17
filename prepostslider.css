@@ -1,0 +1,86 @@
+html, body {
+  height: 100%;
+}
+.prepostslider {
+  height: 100%;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  background: #1a4559;
+}
+@media (max-height: 450px) {
+  .prepostslider {
+    height: 80%;
+  }
+}
+.prepostslider > ul {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding-left: 0;
+  white-space: nowrap;
+  -webkit-transition: -webkit-transform 1000ms;
+  transition: transform 1000ms;
+  font-size: 0;
+  z-index: 10;
+}
+.prepostslider > ul > li {
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  list-style: none;
+  max-width: 90%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: opacity 2000ms;
+  transition: opacity 2000ms;
+  -webkit-tap-highlight-color: transparent;
+}
+@media (max-height: 450px) {
+  .prepostslider > ul > li {
+    max-width: 80%;
+  }
+}
+.prepostslider > ul > li.inactive-slide {
+  opacity: .5;
+  -webkit-transition: opacity 1000ms;
+  transition: opacity 1000ms;
+}
+.prepostslider img {
+  height: 100%;
+}
+
+.prepost-pre,
+.prepost-post {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  font-size: 1em;
+  margin-top: -.5em;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1em;
+  text-decoration: none;
+  z-index: 20;
+  -webkit-tap-highlight-color: transparent;
+}
+@media screen and (max-width: 500px) {
+  .prepost-pre,
+  .prepost-post {
+    font-size: .8em;
+    padding: 1em .2em;
+  }
+}
+
+.prepost-pre {
+  left: 0;
+  border-radius: 0 2em 2em 0;
+}
+
+.prepost-post {
+  right: 0;
+  border-radius: 2em 0 0 2em;
+}
